@@ -1,0 +1,260 @@
+// Variables
+$primary-color: #ff7518;
+$secondary-color: #e95058;
+$light-color: #9b9b9b;
+
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.bg-primary {
+  background-color: $primary-color;
+}
+
+.bg-secondary {
+  background-color: $secondary-color;
+}
+
+.btn-anim {
+  animation: bounce 0.2s ease-in-out forwards;
+}
+
+.movie-list {
+  padding: 2rem;
+
+  .movie-list__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    border: 0;
+    background: linear-gradient($primary-color, #fff);
+    z-index: -1;
+  }
+}
+
+// Styles For Movie Boxes
+.movie-box {
+  height: 100vh;
+  padding: 0.5rem;
+
+  .movie-box__poster {
+    width: 100%;
+    height: 55vh;
+    border-radius: 10px;
+  }
+
+  .movie-box__title {
+    font-size: 2.2rem;
+    margin-bottom: 0;
+  }
+
+  .movie-box__info {
+    font-size: 0.9rem;
+    color: $light-color;
+    margin: 5px 0 0 0;
+  }
+
+  .movie-box__rating {
+    color: $light-color;
+
+    span {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #000;
+    }
+  }
+
+  .movie-box__rating-bar {
+    width: 100%;
+    height: 5px;
+    background-color: $light-color;
+    border-radius: 5px;
+    position: relative;
+    margin: 1.5rem 0;
+
+    div {
+      height: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $primary-color;
+    }
+  }
+
+  .movie-box__btn {
+    display: block;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+}
+
+// Styles For Movie Page
+.movie-page {
+  padding: 1.5rem;
+  animation: pageSlide 0.3s ease-in-out;
+
+  .movie-page__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 105%;
+    height: 25%;
+    border: 0;
+    background: linear-gradient($primary-color, #fff);
+    z-index: -1;
+  }
+
+  .movie-page__poster {
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    .movie-page__poster__img {
+      width: 50%;
+      border-radius: 5px;
+    }
+
+    .movie-page__poster__btn {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      color: #fff;
+      border-radius: 50%;
+      text-decoration: none;
+      bottom: -14px;
+      /* Firefox */
+      left: -moz-calc(50% - 20px);
+      /* WebKit */
+      left: -webkit-calc(50% - 20px);
+      /* Opera */
+      left: -o-calc(50% - 20px);
+      /* Standard */
+      left: calc(50% - 20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .movie-page__trb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .movie-page__trb__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .movie-page__trb__rating {
+    font-weight: bold;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    padding: 0 4px;
+    margin-right: 10px;
+  }
+
+  .movie-page__trb__rating-bar {
+    width: 100%;
+    height: 5px;
+    background-color: $light-color;
+    border-radius: 5px;
+    position: relative;
+
+    div {
+      height: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $primary-color;
+    }
+  }
+
+  .movie-page__info {
+    font-size: 0.8rem;
+    color: $light-color;
+    margin-top: 0;
+  }
+
+  .movie-page__director,
+  .movie-page__writer,
+  .movie-page__stars {
+    color: $primary-color;
+    margin: 0;
+
+    strong {
+      display: inline-block;
+      width: 2.5rem;
+      margin-right: 2rem;
+      color: #000;
+    }
+  }
+
+  .movie-page__btn {
+    display: block;
+    margin: 2rem 1rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+}
+
+.not-found-page {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient($primary-color, #fff);
+  font-size: 4rem;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+// Animations
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pageSlide {
+  from {
+    transform: translateX(500px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

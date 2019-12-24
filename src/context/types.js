@@ -1,0 +1,6 @@
+export const GET_MOVIES = "GET_MOVIES";
+export const GET_SINGLE_MOVIE = "GET_SINGLE_MOVIE";
+export const CLEAN_MOVIE = "CLEAN_MOVIE";
+export const SET_LOADING = "SET_LOADING";
+export const ADD_TO_WATCHLIST = "ADD_TO_WATCHLIST";
+export const REMOVE_FROM_WATCHLIST = "REMOVE_FROM_WATCHLIST";
